@@ -8,7 +8,7 @@ class StringWrapper < String
   attr_accessor :wrapee, :state, :pattern, :substitute
 
   def initialize(wrapee = '')
-    @wrapee = wrapee
+    @wrapee = wrapee.dup
     @state = StringWrapperInitialState.new(self)
   end
 

@@ -35,6 +35,22 @@ RSpec.describe StringWrapper do
         expect(str.replace('lo').with('la')).to eq('la la')
       end
     end
+
+    context 'when .with called many times' do
+      it 'state is with specified' do
+        str = subject.new('la la')
+        str.with('lo').with('lo')
+        expect(str.state).to be_an_instance_of(substitute_specified_state)
+      end
+
+      context 'pattern is specified as well' do
+        it 'replaces pattern with substitute' do
+          str = subject.new('la la')
+          str.with('lo').with('lo').replace('la')
+          expect(str.wrapee).to eq('lo lo')
+        end
+      end
+    end
   end
 
   describe '.replace' do
@@ -55,6 +71,22 @@ RSpec.describe StringWrapper do
       it 'replaces pattern with substitute' do
         str = subject.new('la la')
         expect(str.with('lo').replace('la')).to eq('lo lo')
+      end
+    end
+
+    context 'when .replace called many times' do
+      it 'state is pattern specified' do
+        str = subject.new('la la')
+        str.replace('la').replace('la')
+        expect(str.state).to be_an_instance_of(pattern_specified_state)
+      end
+
+      context 'substitute is specified as well' do
+        it 'replaces pattern with substitute' do
+          str = subject.new('la la')
+          str.replace('la').replace('la').with('lo')
+          expect(str.wrapee).to eq('lo lo')
+        end
       end
     end
   end

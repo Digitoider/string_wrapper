@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name        = 'string_wrapper'
   s.version     = '0.1.0'
@@ -12,6 +14,10 @@ Gem::Specification.new do |s|
     'lib/string_wraper/states/string_wrapper_pattern_specified_state.rb',
     'lib/string_wraper/states/string_wrapper_substitute_specified_state.rb'
   ]
+
+  s.add_development_dependency('rake')
+  s.add_development_dependency('rspec')
+
   s.homepage    = 'http://rubygems.org/gems/string_wrapper'
   s.license     = 'MIT'
 end

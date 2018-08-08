@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.email       = 'digitoider@gmail.com'
   s.files       = [
     'lib/string_wrapper.rb',
-    'lib/string_wrapper/states/string_wrapper_initial_state.rb',
-    'lib/string_wrapper/states/string_wrapper_pattern_specified_state.rb',
-    'lib/string_wrapper/states/string_wrapper_substitute_specfied_state.rb'
+    'lib/string_wraper/states/string_wrapper_initial_state.rb',
+    'lib/string_wraper/states/string_wrapper_pattern_specified_state.rb',
+    'lib/string_wraper/states/string_wrapper_substitute_specified_state.rb'
   ]
   s.homepage    = 'http://rubygems.org/gems/string_wrapper'
   s.license     = 'MIT'

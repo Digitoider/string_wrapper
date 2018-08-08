@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe StringWrapper do
   subject { StringWrapper }
   let(:substitute_specified_state) { StringWrapperSubstituteSpecifiedState }
